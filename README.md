@@ -24,6 +24,12 @@ The header of such a file (outlined by a rectangle of dashes) contains informati
 After entering the data into the database, scientists can make queries on ships and flights and upload the resulting sample to a CSV format for further work with information.
 
 
+\begin{itemize}
+  \item The individual entries are indicated with a black dot, a so-called bullet.
+  \item The text in the entries may be of any length.
+\end{itemize}
+
+
 ## Functionality
 
 The user can: 
