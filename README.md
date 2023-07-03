@@ -18,6 +18,7 @@ In essence, this is a regular text file that needs to be parsed:
 
 ![image](https://github.com/Leeralim/Ocean/assets/49206103/ee778601-93df-497f-8f68-3bcc5d3573c8)
 
+The header of such a file (outlined by a rectangle of dashes) contains information about the vessel, flight number, station, flight time, coordinates and meteorological information (wind speed, cloudiness, pressure, air temperature), the operator of entering information (i.e. the name of the scientist who produced research).
 
 After entering the data into the database, scientists can make queries on ships and flights and upload the resulting sample to a CSV format for further work with information.
 
