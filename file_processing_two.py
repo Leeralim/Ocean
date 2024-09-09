@@ -234,7 +234,7 @@ class FileProcessor:
 
 # ---------------------------------------------------------------------------------------------------- 
 # Тут мы проходимся по полученному выше массиву с целью сделать словарь (структуру с полями, как в БД), которая будет использоваться как таблица далее.
-        self.cursor = DatabaseUploader.connect(self, 'ocean', 'postgres', 'Aa12345@', '192.168.49.145')
+        self.cursor = DatabaseUploader.connect(self, db, user, pass, host)
         try:
             query_ship = f"SELECT radio_sign FROM ships_reestr WHERE ves_lat LIKE '%{self.df['ship'][0].upper()}%';"
             # self.cursor[0].execute(query_ship, ('%'+self.df['ship'][0].upper()+'%',))
@@ -269,7 +269,7 @@ class FileProcessor:
         # Объединяем столбцы 'date' и 'st_time' в столбец 'datatime'
         self.df['datatime'] = self.df.apply(lambda row: row['date'] + ' ' + row['st_time'] + '00', axis=1)
 # ----------------------------------------------------------------------------------------------------
-        self.cursor_reg = DatabaseUploader.connect(self, 'ocean', 'postgres', '12345', 'localhost')
+        self.cursor_reg = DatabaseUploader.connect(self, db, user, pass, host)
         self.cursor_reg[0].execute('SELECT zona, shir, dolg FROM full_408;')
         self.qur_eco = self.cursor_reg[0].fetchall()
         self.df_polygons = pd.DataFrame(self.qur_eco, columns=['rnzon', 'lat', 'lon'])
